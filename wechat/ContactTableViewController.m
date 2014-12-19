@@ -9,6 +9,7 @@
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
 #import "ContactTableViewController.h"
 #import "UIImageView+WebCache.h"
+#import "ChatViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -20,17 +21,28 @@
 
 @implementation ContactTableViewController
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *contact = [self.contacts objectAtIndex:indexPath.row];
+    NSLog(@"char with %@", [contact objectForKey:@"name"]);
+    ChatViewController *chatsController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ChatViewController"];
+
+    chatsController.chatWith = contact;
+    chatsController.hidesBottomBarWhenPushed = YES;
+
+    [self.navigationController pushViewController:chatsController animated:YES];
+    //过去可以回来
+
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
 
     [self loadData];
-
-//    [[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"] objectForKey:@"name"];
-
 }
 
 - (void)refresh:(UIRefreshControl *)refresh {

@@ -40,15 +40,15 @@
 
               [[NSUserDefaults standardUserDefaults] setObject:responseObject forKey:@"currentUser"];
               [[NSUserDefaults standardUserDefaults] synchronize];
-
               MainViewController *mainController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainViewController"];
-
               [self presentViewController:mainController animated:YES completion:nil];
+              //跳转以后不能返回跳转以前的页面
           }
           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               NSLog(@"Error: %@", error);
           }];
 }
+
 - (IBAction)SignUp:(id)sender {
     NSString *name = self.nameField.text;
     NSLog(name);

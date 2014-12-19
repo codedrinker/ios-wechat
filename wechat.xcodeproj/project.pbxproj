@@ -19,6 +19,7 @@
 		4924CD0C1A40477C00C2A917 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4924CD0B1A40477C00C2A917 /* Images.xcassets */; };
 		4924CD0F1A40477C00C2A917 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4924CD0D1A40477C00C2A917 /* LaunchScreen.xib */; };
 		4924CD1B1A40477C00C2A917 /* wechatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4924CD1A1A40477C00C2A917 /* wechatTests.m */; };
+		4979D6241A42E93400020459 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4979D6231A42E93400020459 /* ChatViewController.m */; };
 		E1054D7EA21BBE937CB8AA27 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A072DBF43E99B72943D8D8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		4924CD141A40477C00C2A917 /* wechatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wechatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4924CD191A40477C00C2A917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4924CD1A1A40477C00C2A917 /* wechatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wechatTests.m; sourceTree = "<group>"; };
+		4979D6221A42E93400020459 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		4979D6231A42E93400020459 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		67A072DBF43E99B72943D8D8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA902EFF5167D737160DBDD3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +146,8 @@
 				491E41B01A41A32300694C3E /* ContactTableViewController.h */,
 				491E41BC1A41AE4700694C3E /* MeViewController.h */,
 				491E41BD1A41AE4700694C3E /* MeViewController.m */,
+				4979D6221A42E93400020459 /* ChatViewController.h */,
+				4979D6231A42E93400020459 /* ChatViewController.m */,
 			);
 			path = wechat;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				4924CD071A40477C00C2A917 /* JoinWeChatController.m in Sources */,
 				4924CD041A40477C00C2A917 /* AppDelegate.m in Sources */,
 				4924CD011A40477C00C2A917 /* main.m in Sources */,
+				4979D6241A42E93400020459 /* ChatViewController.m in Sources */,
 				491E41AF1A41947F00694C3E /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +446,7 @@
 				INFOPLIST_FILE = wechat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Debug;
@@ -452,6 +459,7 @@
 				INFOPLIST_FILE = wechat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Release;
