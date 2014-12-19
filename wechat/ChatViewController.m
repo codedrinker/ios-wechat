@@ -55,10 +55,13 @@ typedef NSDictionary *dictionary;
     currentUser = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUser"];
     self.navigationItem.title = [self.chatWith objectForKey:@"name"];
     self.messages = [NSMutableArray arrayWithCapacity:12];
-
     firebase = [[Firebase alloc] initWithUrl:@"https://saochats.firebaseio.com/"];
+
+    [firebase observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         [self.messages addObject:snapshot.value];
         [self.chatTableView reloadData];
+
+
     }];
 }
 
@@ -70,6 +73,16 @@ typedef NSDictionary *dictionary;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 - (IBAction)sendBtn:(id)sender {
     NSString *text = self.text.text;
@@ -90,6 +103,7 @@ typedef NSDictionary *dictionary;
             @"to" : @"LVJIAN",
             @"text" : @"Hello Kitty"
     };
+
 
     NSLog(@"%@", fakeMessage);
     [firebase setValue:message];
